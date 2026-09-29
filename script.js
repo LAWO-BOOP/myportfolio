@@ -833,7 +833,7 @@ function animateRevealDetails(
 
 
   element
-    .querySelectorAll("img")
+    .querySelectorAll("img:not(#profile-photo)")
     .forEach(
       (image) => {
 
@@ -857,7 +857,6 @@ function animateRevealDetails(
     );
 
 }
-
 
 // ==========================================
 // PROGRESS BARS + SMOOTH COUNT ANIMATION
