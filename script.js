@@ -5017,3 +5017,25 @@ window.addEventListener(
     passive: true
   }
 );
+
+const profilePhoto = document.getElementById("profile-photo");
+
+if (profilePhoto) {
+  const fixProfilePhoto = () => {
+    profilePhoto.style.filter = "none";
+    profilePhoto.style.transform = "translateZ(0)";
+    profilePhoto.style.backfaceVisibility = "hidden";
+    profilePhoto.style.webkitBackfaceVisibility = "hidden";
+    profilePhoto.style.imageRendering = "auto";
+
+    void profilePhoto.offsetWidth;
+  };
+
+  if (profilePhoto.complete) {
+    fixProfilePhoto();
+  } else {
+    profilePhoto.addEventListener("load", fixProfilePhoto, { once: true });
+  }
+
+  window.addEventListener("resize", fixProfilePhoto);
+}
